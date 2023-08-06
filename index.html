@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car insurance</title>
+    <link rel="stylesheet" href="assets/src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/silverBox.min/silverBox.min.css">
+</head>
+
+<body>
+
+    <div id="car-insurance">
+        <div id="container">
+            <div id="pageslogo">
+                <span>
+                    <i class="fa fa-car"></i>
+                    <span id="title">
+                        HAMEDPYN
+                    </span>
+                </span>
+            </div>
+            <div id="pagestitle">
+                <h1>
+                    <span>CAR</span>
+                    <span>INSURANCE</span>
+                </h1>
+            </div>
+            <div id="selectBox">
+                <div id="cars">
+                    <select>
+                        <option>Please select a car</option>
+                        <option>Porsche 911</option>
+                        <option>Jaguar XF</option>
+                        <option>Rolls-Royce</option>
+                        <option>BMW i8</option>
+                        <option>Bugatti Chiron</option>
+                        <option>Benz G-Class</option>
+                        <option>Lamborghini Revuelto</option>
+                    </select>
+                </div>
+                <div id="years">
+                    <select>
+                        <option>Please select a year</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                        <option>2021</option>
+                        <option>2020</option>
+                        <option>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011</option>
+                        <option>2010</option>
+                    </select>
+                </div>
+                <div id="insurance">
+                    <div id="allRisks">
+                        <input type="radio" name="radio">
+                        <label for="radio">
+                            All Risks insurance
+                        </label>
+                    </div>
+                    <div id="thirdParty">
+                        <input type="radio" name="radio">
+                        <label for="radio">
+                            third party insurance
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="footerBtn">
+                <button id="submitBtn">Submit</button>
+            </div>
+        </div>
+        <div id="pages-image">
+            <img src="assets/Images/car.png" alt="carImage">
+        </div>
+    </div>
+    <div id="insurance-type" class="hide">
+        <i class="fa fa-arrow-left"></i>
+        <div id="final-status">
+            <span class="type">Car :
+                <span class="value">Porsche</span>
+            </span>
+            <span class="type">Year :
+                <span class="value">2020</span>
+            </span>
+
+            <span class="type">insurance Type :
+                <span class="value">All Risks insurance</span>
+            </span>
+            <hr>
+            <span class="type" id="price">Price :
+                <span class="value">1.000.000.000</span>
+            </span>
+            <div id="spinner">
+                <img src="assets/Images/Spinner-1.4s-200px.gif" alt="spinner">
+            </div>
+            <div id="btn">
+                <button id="BuyBtn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/silverBox.min/silverBox.min.js"></script>
+    <script defer src="assets/src/js/index.js"></script>
+</body>
+
+</html>

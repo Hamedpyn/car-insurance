@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    text-decoration: none;
+}
+
+label {
+    user-select: none;
+}
+
+body {
+    background-color: #eee;
+}
+
+#car-insurance {
+    width: 1200px;
+    height: 700px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    display: flex;
+    margin: 30px auto;
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+#pages-image img {
+    width: 750px;
+    height: 700px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 0px 50px;
+    gap: 50px;
+}
+
+#pages-image {
+    position: absolute;
+    left: 450px;
+    user-select: none;
+}
+
+#pageslogo span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+}
+
+#pageslogo span i {
+    font-size: 23px;
+    color: rgb(0, 124, 255);
+}
+
+#pageslogo span span {
+    font-weight: 500;
+    font-size: 20px;
+    color: #007cff;
+}
+
+#pagestitle h1 {
+    font-size: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    user-select: none;
+}
+
+#pagestitle h1 span:first-of-type {
+    margin-bottom: -15px;
+}
+
+#selectBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+:is(#cars select, #years select) {
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 4px;
+    padding-left: 10px;
+    transition: all 0.2s;
+}
+
+:is(#cars select, #years select):hover {
+    color: #007cff;
+}
+
+#insurance {
+    margin-top: 30px;
+}
+
+#footerBtn {
+    margin-top: 50px;
+}
+
+:is(#submitBtn, #BuyBtn) {
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007cff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+}
+
+:is(#submitBtn:active, #BuyBtn:active) {
+    transform: scale(0.9);
+    background-color: #3392f8;
+}
+
+.hide {
+    display: none !important;
+}
+
+#insurance-type {
+    width: 400px;
+    height: 370px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 150px auto;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+#final-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    width: 400px;
+    gap: 6px;
+    margin-top: 30px;
+}
+
+.type {
+    font-size: 16px;
+    color: #000000;
+    user-select: none;
+}
+
+#price {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.value {
+    font-size: 20px;
+    color: #00000085;
+    user-select: none;
+}
+
+#final-status hr {
+    width: 270px;
+    margin-top: 30px;
+}
+
+#insurance-type i {
+    font-size: 25px;
+    color: #00000085;
+    transition: 0.2s;
+    margin: 10px 0px 0px 10px;
+    cursor: pointer;
+}
+
+#insurance-type i:active {
+    scale: 0.8;
+}
+
+#insurance-type i:hover {
+    color: #000;
+}
+
+#spinner {
+    display: none;
+    margin: -70px 0px -35px 0px;
+}
