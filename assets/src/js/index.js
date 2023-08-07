@@ -22,6 +22,7 @@ function submit() {
         toggleVisibility(finalResult, container);
     });
 }
+submit()
 
 // Function to hide elements
 function toggleVisibility(remove, add) {
@@ -29,4 +30,32 @@ function toggleVisibility(remove, add) {
     remove.classList.remove('hide');
     // Add the 'hide' class to the add element
     add.classList.add('hide');
+}
+
+buyBtn.addEventListener('click', () => {
+    // Increase the height of the finalResult element to 500px
+    finalResult.style.height = '500px';
+    // Display the spinner by modifying its style
+    spinner.style.display = 'block';
+
+    // Set a timeout function to simulate a delay
+    setTimeout(() => {
+        // Revert the height of finalResult to 400px
+        finalResult.style.height = '400px';
+        // Hide the spinner by modifying its style
+        spinner.style.display = 'none';
+        // Call the successAlert function
+        successAlert();
+    }, 2000);
+})
+
+// Use the silver box library to give an alert module
+function successAlert() {
+    return silverBox({
+        title: {
+            text: "Success",
+            alertIcon: "success"
+        },
+        text: "Congratulations! Your insurance has been successfully registered"
+    });
 }
