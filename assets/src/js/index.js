@@ -52,7 +52,7 @@ function FinalPage() {
     });
 }
 
-// Use the silver box library to give an alert module
+// Use the silver box library to give an success alert module
 function successAlert() {
     return silverBox({
         title: {
@@ -63,6 +63,7 @@ function successAlert() {
     });
 }
 
+// Use the silver box library to give an failed alert module
 function errorAlert(error) {
     return silverBox({
         alertIcon: "error",
