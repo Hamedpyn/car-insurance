@@ -112,7 +112,20 @@ class Insurance {
         this.year = year;
         this.insuranceType = insuranceType;
         this.price = price;
+        // Calculate final price
+        this.calculateFinalPrice();
     }
+
+    // Calculates total price applying different factors
+    calculateFinalPrice() {
+        // Apply year depreciation
+        this.applyYearDepreciation();
+        // Apply insurance type price adjustment
+        this.applyInsuranceTypeRate();
+        // Apply car model price adjustment
+        this.applyCarModelRate();
+    }
+
     // Apply depreciation based on year  
     applyYearDepreciation() {
         // Get year diff
@@ -120,6 +133,7 @@ class Insurance {
         // Apply 7% depreciation per year 
         this.price += this.price * decrease * 7 / 100;
     }
+
     // Increase price based on insurance type
     applyInsuranceTypeRate() {
         if (this.insuranceType === "All Risks") {
@@ -128,6 +142,7 @@ class Insurance {
             this.price += this.price * 8 / 100;
         }
     }
+    
     // Increase price based on car model 
     applyCarModelRate() {
         if (this.car == 'Porsche 911') {
