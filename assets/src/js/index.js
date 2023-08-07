@@ -47,7 +47,12 @@ function finalPage() {
             spinner.style.display = 'none';
             // Call the successAlert function
             successAlert();
-        }, 2000);
+            // 3 seconds after success alert
+            setTimeout(() => {
+                // page be reload
+                window.location.reload()
+            },3000)
+        }, 2000)
     });
 }
 
@@ -85,6 +90,9 @@ function submit() {
             // Check if year is selected
         } else if (years.value == 'Select a year') {
             errorAlert('Select a year please')
+            // check if the input radio is checked
+        } else if (!document.querySelector('input:checked')) {
+            errorAlert('Select a insurance please')
             // If inputs valid, calculate and show results
         } else {
             // Show results section
