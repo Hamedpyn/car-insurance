@@ -137,9 +137,9 @@ class Insurance {
 
     // Increase price based on insurance type
     applyInsuranceTypeRate() {
-        if (this.insuranceType === "All Risks") {
+        if (this.insuranceType == "All Risks") {
             this.price += this.price * 16 / 100;
-        } else if (this.insuranceType === "Third Party") {
+        } else if (this.insuranceType == "Third Party") {
             this.price += this.price * 8 / 100;
         }
     }
