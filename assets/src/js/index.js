@@ -17,7 +17,7 @@ let
 
 //Events
 document.addEventListener('DOMContentLoaded', () => {
-    FinalPage()
+    finalPage()
     submit()
 })
 
@@ -29,7 +29,7 @@ function toggleVisibility(remove, add) {
     add.classList.add('hide');
 }
 
-function FinalPage() {
+function finalPage() {
     // Adds a click event listener to the backIcon element
     backIcon.addEventListener('click', () => {
         toggleVisibility(container, finalResult);
@@ -39,7 +39,6 @@ function FinalPage() {
         finalResult.style.height = '500px';
         // Display the spinner by modifying its style
         spinner.style.display = 'block';
-
         // Set a timeout function to simulate a delay
         setTimeout(() => {
             // Revert the height of finalResult to 400px
