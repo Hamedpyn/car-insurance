@@ -142,7 +142,7 @@ class Insurance {
             this.price += this.price * 8 / 100;
         }
     }
-    
+
     // Increase price based on car model 
     applyCarModelRate() {
         if (this.car == 'Porsche 911') {
@@ -162,4 +162,13 @@ class Insurance {
         }
         return this.price;
     }
+}
+
+// Display results in HTML
+function resultPage(insurance) {
+    // Show fields
+    userCar.innerHTML = insurance.car;
+    userYear.innerHTML = insurance.year;
+    userType.innerHTML = insurance.insuranceType;
+    userPrice.innerHTML = `${insurance.price.toFixed(2)}$`;
 }
