@@ -34,20 +34,19 @@
             <div id="selectBox">
                 <div id="cars">
                     <select>
-                        <option>Please select a car</option>
+                        <option>Select a car</option>
                         <option>Porsche 911</option>
                         <option>Jaguar XF</option>
                         <option>Rolls-Royce</option>
                         <option>BMW i8</option>
                         <option>Bugatti Chiron</option>
                         <option>Benz G-Class</option>
-                        <option>Lamborghini Revuelto</option>
+                        <option>Audi R8</option>
                     </select>
                 </div>
                 <div id="years">
                     <select>
-                        <option>Please select a year</option>
-                        <option>2023</option>
+                        <option>Select a year</option>
                         <option>2022</option>
                         <option>2021</option>
                         <option>2020</option>
@@ -65,16 +64,14 @@
                 </div>
                 <div id="insurance">
                     <div id="allRisks">
-                        <input type="radio" name="radio">
-                        <label for="radio">
-                            All Risks insurance
-                        </label>
+                        <input type="radio" name="radio" checked>
+                        <label for="radio">All Risks</label>
+                        insurance
                     </div>
                     <div id="thirdParty">
                         <input type="radio" name="radio">
-                        <label for="radio">
-                            third party insurance
-                        </label>
+                        <label for="radio">Third Party</label>
+                        insurance
                     </div>
                 </div>
             </div>
@@ -90,18 +87,18 @@
         <i class="fa fa-arrow-left"></i>
         <div id="final-status">
             <span class="type">Car :
-                <span class="value">Porsche</span>
+                <span class="value" id="car"></span>
             </span>
             <span class="type">Year :
-                <span class="value">2020</span>
+                <span class="value" id="madeYear"></span>
             </span>
 
             <span class="type">insurance Type :
-                <span class="value">All Risks insurance</span>
+                <span class="value" id="type"></span>
             </span>
             <hr>
             <span class="type" id="price">Price :
-                <span class="value">1.000.000.000</span>
+                <span class="value" id="carPrice"></span>
             </span>
             <div id="spinner">
                 <img src="assets/Images/Spinner-1.4s-200px.gif" alt="spinner">

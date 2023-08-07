@@ -8,21 +8,18 @@ let
     container = document.querySelector('#car-insurance'),
     submitBtn = document.querySelector('#submitBtn'),
     buyBtn = document.querySelector('#BuyBtn'),
-    spinner = document.querySelector('#spinner');
+    spinner = document.querySelector('#spinner'),
+    userCar = document.querySelector('#car'),
+    userType = document.querySelector('#type'),
+    userPrice = document.querySelector('#carPrice'),
+    userYear = document.querySelector('#madeYear'),
+    thirdParty = document.querySelector('#thirdParty');
 
-// Adds a click event listener to the backIcon element
-backIcon.addEventListener('click', () => {
-    toggleVisibility(container, finalResult);
-});
-
-// Defines a submit function
-function submit() {
-    // Adds a click event listener to the submitBtn element
-    submitBtn.addEventListener('click', () => {
-        toggleVisibility(finalResult, container);
-    });
-}
-submit()
+//Events
+document.addEventListener('DOMContentLoaded', () => {
+    FinalPage()
+    submit()
+})
 
 // Function to hide elements
 function toggleVisibility(remove, add) {
@@ -32,22 +29,28 @@ function toggleVisibility(remove, add) {
     add.classList.add('hide');
 }
 
-buyBtn.addEventListener('click', () => {
-    // Increase the height of the finalResult element to 500px
-    finalResult.style.height = '500px';
-    // Display the spinner by modifying its style
-    spinner.style.display = 'block';
+function FinalPage() {
+    // Adds a click event listener to the backIcon element
+    backIcon.addEventListener('click', () => {
+        toggleVisibility(container, finalResult);
+    });
+    buyBtn.addEventListener('click', () => {
+        // Increase the height of the finalResult element to 500px
+        finalResult.style.height = '500px';
+        // Display the spinner by modifying its style
+        spinner.style.display = 'block';
 
-    // Set a timeout function to simulate a delay
-    setTimeout(() => {
-        // Revert the height of finalResult to 400px
-        finalResult.style.height = '400px';
-        // Hide the spinner by modifying its style
-        spinner.style.display = 'none';
-        // Call the successAlert function
-        successAlert();
-    }, 2000);
-})
+        // Set a timeout function to simulate a delay
+        setTimeout(() => {
+            // Revert the height of finalResult to 400px
+            finalResult.style.height = '400px';
+            // Hide the spinner by modifying its style
+            spinner.style.display = 'none';
+            // Call the successAlert function
+            successAlert();
+        }, 2000);
+    });
+}
 
 // Use the silver box library to give an alert module
 function successAlert() {
@@ -56,6 +59,58 @@ function successAlert() {
             text: "Success",
             alertIcon: "success"
         },
-        text: "Congratulations! Your insurance has been successfully registered"
+        text: "Congratulations ! Your insurance has been successfully registered"
     });
+}
+
+function errorAlert(error) {
+    return silverBox({
+        alertIcon: "error",
+        text: `${error}`,
+        centerContent: true,
+        cancelButton: {
+            text: "OK"
+        }
+    })
+}
+
+// Submit button click handler 
+function submit() {
+
+    // Validate form inputs
+    submitBtn.addEventListener('click', () => {
+        // Check if car is selected
+        if (cars.value == 'Select a car') {
+            errorAlert('Select a car please')
+            // Check if year is selected
+        } else if (years.value == 'Select a year') {
+            errorAlert('Select a year please')
+            // If inputs valid, calculate and show results
+        } else {
+            // Show results section
+            toggleVisibility(finalResult, container);
+            // Get user selected inputs
+            let inputRadio = document.querySelector('input:checked+label'),
+                year = years.value,
+                car = cars.value,
+                insuranceType = inputRadio.innerHTML,
+                // Create Insurance instance with user inputs
+                newInsurance = new Insurance(car, year, insuranceType);
+
+            // Display calculated results  
+            resultPage(newInsurance)
+        }
+    });
+}
+
+// Insurance policy price calculation 
+class Insurance {
+    // Initialize with parameters
+    constructor(car, year, insuranceType, price = 1700) {
+        // Set initial property values
+        this.car = car;
+        this.year = year;
+        this.insuranceType = insuranceType;
+        this.price = price;
+    }
 }
