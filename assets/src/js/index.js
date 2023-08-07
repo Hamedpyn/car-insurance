@@ -113,4 +113,11 @@ class Insurance {
         this.insuranceType = insuranceType;
         this.price = price;
     }
+    // Apply depreciation based on year  
+    applyYearDepreciation() {
+        // Get year diff
+        let decrease = 2023 - this.year;
+        // Apply 7% depreciation per year 
+        this.price += this.price * decrease * 7 / 100;
+    }
 }
