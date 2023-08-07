@@ -128,4 +128,23 @@ class Insurance {
             this.price += this.price * 8 / 100;
         }
     }
+    // Increase price based on car model 
+    applyCarModelRate() {
+        if (this.car == 'Porsche 911') {
+            this.price += this.price * 43 / 100
+        } else if (this.car == 'Jaguar XF') {
+            this.price += this.price * 24 / 100
+        } else if (this.car == 'Rolls-Royce') {
+            this.price += this.price * 55 / 100
+        } else if (this.car == 'Audi R8') {
+            this.price += this.price * 29 / 100
+        } else if (this.car == 'BMW i8') {
+            this.price += this.price * 33 / 100
+        } else if (this.car == 'Benz G-Class') {
+            this.price += this.price * 35 / 100
+        } else if (this.car == 'Bugatti Chiron') {
+            this.price += this.price * 40 / 100
+        }
+        return this.price;
+    }
 }
