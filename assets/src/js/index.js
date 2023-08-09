@@ -51,7 +51,7 @@ function finalPage() {
             setTimeout(() => {
                 // page be reload
                 window.location.reload()
-            },3000)
+            }, 3000)
         }, 2000)
     });
 }
@@ -168,7 +168,6 @@ class Insurance {
         } else if (this.car == 'Bugatti Chiron') {
             this.price += this.price * 40 / 100
         }
-        return this.price;
     }
 }
 
